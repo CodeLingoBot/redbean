@@ -30,7 +30,7 @@
  */
 R::ext('buildQuery', function($pieces) {
   $sql = '';
-  $glue = NULL;
+  $glue = null;
   foreach( $pieces as $piece ) {
     $n = count( $piece );  
     switch( $n ) {
@@ -38,14 +38,14 @@ R::ext('buildQuery', function($pieces) {
         $sql .= " {$piece[0]} ";
         break;
       case 2:
-        $glue = NULL;
+        $glue = null;
         if (!is_null($piece[0])) $sql .= " {$piece[1]} ";
         break;
       case 3:
         $glue = ( is_null( $glue ) ) ? $piece[1] : $glue;
 	if (!is_null($piece[0])) { 
 		$sql .= " {$glue} {$piece[2]} ";
-		$glue = NULL;
+		$glue = null;
 	}
         break;
     }

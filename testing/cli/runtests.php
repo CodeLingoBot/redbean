@@ -24,10 +24,10 @@ error_reporting( E_ALL );
 //Load configuration file
 if ( file_exists( 'config/test.ini' ) ) {
 	$ini = parse_ini_file( "config/test.ini", TRUE );
-	$travis = FALSE;
+	$travis = false;
 } elseif ( file_exists( 'config/test-travis.ini' ) ) {
 	$ini = parse_ini_file( "config/test-travis.ini", TRUE );
-	$travis = TRUE;
+	$travis = true;
 } else {
 	die( 'Cant find configuration file.' );
 }
